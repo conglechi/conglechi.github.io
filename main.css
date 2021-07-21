@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+}
+
+/* Navbar */
+.nav {
+    min-height: 42px;
+    background-color: #EF5122;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_list {
+    padding-left: 0;
+    margin: auto 16px;
+}
+
+.nav_item {
+    color: #fff;
+    list-style: none;
+    margin: 0 8px;
+    display: inline;
+}
+
+/* Form layout */
+.form_container {
+    max-width: 720px;
+    padding: 32px;
+    margin: 36px auto 0 auto;
+    background-color: #fff;
+}
+
+.form_row {
+    padding: 8px 0;
+    display: flex;
+}
+
+.form_label {
+    min-width: 90px;
+}
+
+.form_input {
+    /* flex = 1 sẽ chiếm hết chiều ngang main */
+    flex: 1; 
+}
+
+/* Column layout */
+.column_layout {
+    margin-top: 36px;
+    padding: 20px 0;
+    background-color: #fff;
+    display: flex;
+}
+
+.column_item {
+    padding: 0 12px;
+}
+
+.sidebar_one {
+    flex: 1;
+    /* vị trí 1 */
+    /* order: 1; */
+}
+
+.sidebar_two {
+    flex: 1;
+    /* vị trí 2 */
+    /* order: 2; */
+}
+
+.main_column {
+    flex: 3;
+    /* order: 3; */
+}
+
+/* Feature layout */
+.feature_layout {
+    margin-top: 36px;
+    display: flex;
+    /* căn chỉnh giữa các item*/
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Trên PC, Tablet chuyển sang hàng*/
+@media (min-width: 740px) {
+    .feature_layout {
+        flex-direction: row;
+    }
+}
+
+.feature_item {
+    padding: 12px 16px;
+    margin-top: 16px;
+    /* xét mainsize */
+    flex-basis: 30%;
+}
+
+.feature_item:nth-child(1) {
+    background-color: rgb(128, 226, 212);
+}
+
+.feature_item:nth-child(2) {
+    background-color: rgb(227, 200, 192);
+}
+
+.feature_item:nth-child(3) {
+    background-color: rgb(192, 216, 227);
+}
+
+/* Wrap layout */
+.wrap_layout {
+    background-color: #fff;
+    margin-top: 36px;
+    padding: 12px 0 32px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* wrap là xuống dòng | wrap-reserve là lên dòng */
+}
+
+.wrap_layout_item {
+    width: 148px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: hsl(352, 86%, 42%);
+}
+
+/* Center layout */
+.center_layout {
+    background-color: antiquewhite;
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+}
+
+.center_layout_item {
+    font-size: 42px;
+    font-weight: 700;
+    margin: auto;
+}
+
+/* Chart layout */
+.chart_layout {
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    height: 320px;
+    background-color: #fff;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: space-around;
+}
+
+.chart_layout_item {
+    align-self: flex-end;
+    width: 60px;
+    color: #fff;
+    text-align: center;
+    height: var(--percent);
+    background-color: rgb(224, 45, 13);
+    animation: growth ease 1.5s;
+}
+
+@keyframes growth {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: var(--percent);
+    }
+}
+
+/* End */
+.the_end {
+    margin: 12px auto 48px auto;
+    padding: 32px 0;
+    max-width: 740px;
+    min-height: 360px;
+    display: flex;
+}
+
+.the_end_first {
+    padding: 4px 16px;
+    background-color: rgb(167, 171, 228);
+    flex: 1;
+}
+
+.the_end_second {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* column-reverse đảo start và end */
+}
+
+.the_end_second_one {
+    padding: 4px 16px;
+    background-color: rgb(221, 115, 189);
+    flex: 1;
+}
+
+.the_end_second_two {
+    padding: 4px 16px;
+    background-color: azure;
+    flex: 1;
+
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    = flex-flow: row wrap; */
+}
+
+/* 
+    flex: 1;
+
+    flex-grow: 1;
+    flex-height: 1;
+    flex-basis: 1;
+
+*/
